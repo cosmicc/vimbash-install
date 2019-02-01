@@ -1,4 +1,4 @@
-sudo apt install libncurses5-dev python-dev python3-dev git zlib1g-dev
+sudo apt install libncurses5-dev python-dev python3-dev git zlib1g-dev build-essential python-setuptools python-pip python-smbus libgdbm-dev libc6-dev libsqlite3-dev tk-dev libssl-dev openssl libffi-dev
 
 sudo apt remove vim vim-runtime gvim
 
