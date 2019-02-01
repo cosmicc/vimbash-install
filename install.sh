@@ -1,4 +1,4 @@
-sudo apt install libncurses5-dev python-dev python3-dev git
+sudo apt install libncurses5-dev python-dev python3-dev git zlib1g-dev
 
 sudo apt remove vim vim-runtime gvim
 
