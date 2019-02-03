@@ -1,4 +1,4 @@
-sudo apt install libncurses5-dev python-dev python3-dev git zlib1g-dev build-essential python-setuptools python-pip python-smbus libgdbm-dev libc6-dev libsqlite3-dev tk-dev libssl-dev openssl libffi-dev
+sudo apt install libncurses5-dev git zlib1g-dev build-essential libgdbm-dev libc6-dev libsqlite3-dev tk-dev libssl-dev openssl libffi-dev
 
 sudo apt remove vim vim-runtime gvim
 
@@ -8,11 +8,11 @@ sudo chsh -s /bin/bash root
 mkdir /opt/vim-src
 
 cd /opt/vim-src 
-#sudo git clone https://github.com/vim/vim.git 
+sudo git clone https://github.com/vim/vim.git 
 cd /opt/vim-src/vim
 
 # double check python lib paths
-./configure --with-features=huge --enable-multibyte --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config-arm-linux-gnueabihf/ --prefix=/usr/ --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.7/config-3.7m-arm-linux-gnueabihf/
+./configure --with-features=huge --enable-multibyte --prefix=/usr/ --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.7/config-3.7m-arm-linux-gnueabihf/
 
 make
 
