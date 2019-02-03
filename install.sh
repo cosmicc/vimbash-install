@@ -1,18 +1,26 @@
-sudo apt install libncurses5-dev python-dev python3-dev git
+apt update
+apt upgrade
+apt install libncurses5-dev python-dev python3-dev git openvpn
+apt remove vim vim-runtime gvim
+apt autoremove
 
-sudo apt remove vim vim-runtime gvim
+chsh -s /bin/bash ip
+chsh -s /bin/bash root
 
-sudo chsh -s /bin/bash ip
-sudo chsh -s /bin/bash root
-
+if ! [ -d "/opt/vim-src" ] ; then
 mkdir /opt/vim-src
+fi
 
 cd /opt/vim-src 
-#sudo git clone https://github.com/vim/vim.git 
+
+if ! [ -d "/opt/vim-src/vim" ] ; then
+sudo git clone https://github.com/vim/vim.git 
+fi 
+
 cd /opt/vim-src/vim
 
 # double check python lib paths
-./configure --with-features=huge --enable-multibyte --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/config-arm-linux-gnueabihf/ --prefix=/usr/ --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.7/config-3.7m-arm-linux-gnueabihf/
+./configure --with-features=huge --enable-multibyte --prefix=/usr/ --enable-python3interp=yes --with-python3-config-dir=/usr/lib/python3.7/config-3.7m-arm-linux-gnueabihf/
 
 make
 
@@ -23,8 +31,14 @@ sudo update-alternatives --set editor /usr/bin/vim
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
 sudo update-alternatives --set vi /usr/bin/vim
 
+
+if ! [ -d "/root/.vim" ] ; then
 mkdir /root/.vim
+fi
+
+if ! [ -d "/home/ip/.vim" ] ; then
 mkdir /home/ip/.vim
+fi
 
 git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git /home/ip/.vim/bundle/Vundle.vim
@@ -44,6 +58,9 @@ cp /opt/vimbash-install/promptline.sh /home/ip/.promptline.sh
 
 cp /opt/vimbash-install/bashrc /root/.bashrc
 cp /opt/vimbash-install/bashrc /home/ip/.bashrc
+
+cp /opt/vimbash-install/profile /root/.profile
+cp /opt/vimbash-install/profile /home/ip/.profile
 
 chown ip.ip /home/ip -R
 
