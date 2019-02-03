@@ -65,7 +65,7 @@ cp /opt/vimbash-install/profile /home/ip/.profile
 chown ip.ip /home/ip -R
 
 cd /opt
-git clone git@github.com:powerline/fonts.git
+git clone https://github.com/powerline/fonts.git
 cd /opt/fonts
 ./install.sh
 
