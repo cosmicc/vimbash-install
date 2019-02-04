@@ -9,26 +9,28 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'edkolev/promptline.vim'
+"Plugin 'edkolev/promptline.vim'
 Plugin 'w0rp/ale'
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
+"Plugin 'vim-syntastic/syntastic'
+"Plugin 'nvie/vim-flake8'
 Plugin 'fisadev/vim-isort'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
 "Bundle 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin on
 let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {'python': ['flake8', 'pylint', 'isort']}
 let g:ale_linters_explicit = 1
 let g:vim_isort_python_version = 'python3'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 0
 set suffixesadd=.py
 set wildignore=*.pyc
 let g:netrw_list_hide= '.*\.pyc$'
