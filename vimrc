@@ -20,7 +20,7 @@ Plugin 'vim-scripts/indentpython.vim'
 "Plugin 'nvie/vim-flake8'
 Plugin 'fisadev/vim-isort'
 "Plugin 'scrooloose/nerdtree'
-Plugin 'tmhedberg/SimpylFold'
+"Plugin 'tmhedberg/SimpylFold'
 "Bundle 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin on
@@ -48,6 +48,7 @@ set ls=2
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set backspace=indent,eol,start
 set smarttab
 set expandtab
 set autoindent
